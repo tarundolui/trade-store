@@ -25,6 +25,7 @@ public class TradeServiceImpl implements TradeService{
 
 	public List<Trade> save(Trade trade) throws Exception {
 		validate(trade);
+		trade.setCreatDate(LocalDate.now());
 		if(CollectionUtils.isEmpty(tradeCache.get(trade.getTradeId()))) {
 			List<Trade> trades = new ArrayList<>();
 			trades.add(trade);
