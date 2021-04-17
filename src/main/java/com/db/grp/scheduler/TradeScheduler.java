@@ -15,9 +15,7 @@ public class TradeScheduler {
 	/**
 	 * Run everyday 12AM to check if the maturity date less than current date 
 	 * to set the expiry flag to Y
-	 * @param trade
 	 * @return
-	 * @throws Exception
 	 */
 	@Scheduled(cron = "0 0 0 * * *")
 	public void checkAndSetExpiryFlag() {
