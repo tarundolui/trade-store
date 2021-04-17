@@ -11,43 +11,41 @@ http://localhost:8080/send
 POST
 
   {
-    "tradeId":"1",
+    "tradeId":"T1",
     "version":1,
-    "bookId":"b12",
-    "counterPartyId":"CP1",
-    "maturityDate":"2021-04-20",
-    "expiryFlag": "N"
-}
+    "bookId":"B1",
+    "counterPartyId":"CP-1",
+    "maturityDate":"20/04/2021"
+  }
 
-Sample output- 
-
+Sample output list of trades- 
 
 [
     {
-        "tradeId": "1",
+        "tradeId": "T1",
+        "version": 1,
+        "counterPartyId": "CP-1",
+        "bookId": "B1",
+        "maturityDate": "20/04/2021",
+        "creatDate": "17/04/2021",
+        "expiryFlag": "N"
+    },
+    {
+        "tradeId": "T2",
         "version": 2,
-        "counterPartyId": "CP1",
-        "bookId": "b12",
-        "maturityDate": "2021-04-20",
-        "creatDate": "2021-04-17",
+        "counterPartyId": "CP-2",
+        "bookId": "B1",
+        "maturityDate": "20/05/2021",
+        "creatDate": "17/04/2021",
         "expiryFlag": "N"
     },
     {
-        "tradeId": "1",
+        "tradeId": "T2",
         "version": 1,
-        "counterPartyId": "CP1",
-        "bookId": "b12",
-        "maturityDate": "2021-04-20",
-        "creatDate": "2021-04-17",
-        "expiryFlag": "N"
-    },
-    {
-        "tradeId": "2",
-        "version": 1,
-        "counterPartyId": "CP1",
-        "bookId": "b12",
-        "maturityDate": "2021-04-20",
-        "creatDate": "2021-04-17",
+        "counterPartyId": "CP-1",
+        "bookId": "B1",
+        "maturityDate": "20/05/2021",
+        "creatDate": "17/04/2021",
         "expiryFlag": "N"
     }
 ]
@@ -55,5 +53,8 @@ Sample output-
 >How application will store the data
  No database has been used. Stored in class variable so data will be cleared if the application gets stopped.
  
-> Sample 
+> How to get the stored trades
+  Below API has been exposed to get the stored trades 
+  http://localhost:8080/get
+  Method GET
 

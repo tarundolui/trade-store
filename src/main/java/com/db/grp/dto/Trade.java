@@ -2,6 +2,10 @@ package com.db.grp.dto;
 
 import java.time.LocalDate;
 
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 public class Trade {
 
@@ -9,9 +13,14 @@ public class Trade {
 	private int version;
 	private String counterPartyId;
 	private String bookId;
+	
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate maturityDate;
+	
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate creatDate;
-	private String expiryFlag;
+	
+	private String expiryFlag = "N";
 	
 	public String getTradeId() {
 		return tradeId;

@@ -23,6 +23,12 @@ public class TradeServiceImpl implements TradeService{
 
 	Map<String, List<Trade>> tradeCache = new HashMap<>();
 
+	/**
+	 * Save the trade 
+	 * @param Trade object
+	 * @return List of Trade
+	 * @throws Exception
+	 */
 	public List<Trade> save(Trade trade) throws Exception {
 		validate(trade);
 		trade.setCreatDate(LocalDate.now());
@@ -42,7 +48,12 @@ public class TradeServiceImpl implements TradeService{
 
 	}
 
-
+	/**
+	 * Validate the trade 
+	 * @param Trade object
+	 * @return boolean
+	 * @throws Exception
+	 */
 	public boolean validate(Trade newTrade) throws Exception {
 
 		if(newTrade.getMaturityDate().isBefore(LocalDate.now())) 
@@ -64,6 +75,10 @@ public class TradeServiceImpl implements TradeService{
 
 	}
 
+	/**
+	 * Get the trades 
+	 * @return List of Trades
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List<Trade> getTrades(){
 		

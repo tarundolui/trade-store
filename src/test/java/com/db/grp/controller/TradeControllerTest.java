@@ -34,7 +34,11 @@ public class TradeControllerTest {
 		mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 	}
 
-
+	/**
+	 * test the rest service and check the return code
+	 * where trade lower version received later
+	 * @throws Exception
+	 */
 	@Test
 	public void store() throws Exception {
 

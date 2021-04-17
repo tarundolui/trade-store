@@ -27,6 +27,10 @@ class TradeServiceTest {
        tradeService.getTradeCache().clear();
     }
 	
+	/**
+	 * Test the validate functionality for trade
+	 * @throws Exception
+	 */
 	@Test
 	public void testValidate() throws Exception{
 		Trade trade = new Trade();
@@ -39,11 +43,11 @@ class TradeServiceTest {
 	}
 	
 	
-	
-	/*
-	 * Test TradeVersionException 
+	/**
+	 * Test the validate functionality for exception scenario
+	 * where trade lower version received later
+	 * @throws Exception
 	 */
-	
 	
 	@Test
 	public void testValidateException() throws Exception{
@@ -65,11 +69,11 @@ class TradeServiceTest {
 		
 	}
 	
-	/*
-	 * Test TradeMaturityDateException
+	/**
+	 * Test the validate functionality for exception scenario
+	 * where trade Maturity date is less than current day
+	 * @throws Exception
 	 */
-	
-	
 	@Test
 	public void testMaturityException() throws Exception{
 		Trade trade = new Trade();
@@ -83,6 +87,11 @@ class TradeServiceTest {
 		
 	}
 	
+	/**
+	 * Test the  save
+	 * where trade lower version received later
+	 * @throws Exception
+	 */
 	@Test
 	public void testSave() throws Exception{
 		Trade trade = new Trade();
